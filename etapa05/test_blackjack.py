@@ -339,3 +339,15 @@ def test_jogador_pode_comprar_carta_durante_a_partida():
     partida.comprar_para(jogador)
 
     assert len(jogador.cartas) == 3
+
+def test_comprar_para_jogador_reduz_baralho():
+    partida = Partida()
+
+    partida.iniciar()
+    jogador = partida.jogadores[0]
+
+    quantidade_antes = len(partida.baralho.cartas)
+
+    partida.comprar_para(jogador)
+
+    assert len(partida.baralho.cartas) == quantidade_antes - 1  
