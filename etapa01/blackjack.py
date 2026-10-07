@@ -3,7 +3,7 @@ class Carta:
         self._valor = valor
 
     def valor(self):
-        if self._valor == "K":
+        if self._valor in ["J", "Q", "K"]:
             return 10
 
         return int(self._valor)
