@@ -351,3 +351,10 @@ def test_comprar_para_jogador_reduz_baralho():
     partida.comprar_para(jogador)
 
     assert len(partida.baralho.cartas) == quantidade_antes - 1  
+
+def test_nao_permite_comprar_antes_da_partida_comecar():
+    partida = Partida()
+    jogador = partida.jogadores[0]
+
+    with pytest.raises(RuntimeError):
+        partida.comprar_para(jogador)
