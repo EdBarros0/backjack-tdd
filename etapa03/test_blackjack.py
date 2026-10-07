@@ -114,3 +114,10 @@ def test_baralho_possui_quatro_naipes():
     naipes = {carta.naipe for carta in baralho.cartas}
 
     assert naipes == {"Paus", "Copas", "Espadas", "Ouros"}
+
+def test_baralho_nao_possui_cartas_duplicadas():
+    baralho = Baralho()
+
+    cartas = [(carta._valor, carta.naipe) for carta in baralho.cartas]
+
+    assert len(cartas) == len(set(cartas))
