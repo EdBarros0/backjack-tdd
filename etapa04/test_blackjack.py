@@ -241,3 +241,15 @@ def test_partida_identifica_empate():
     partida.jogadores[1].receber(Carta("9", "Ouros"))
 
     assert partida.vencedor() is None
+
+def test_jogador_acima_de_21_perde():
+    partida = Partida()
+
+    partida.jogadores[0].receber(Carta("10", "Paus"))
+    partida.jogadores[0].receber(Carta("10", "Copas"))
+    partida.jogadores[0].receber(Carta("5", "Espadas"))
+
+    partida.jogadores[1].receber(Carta("10", "Ouros"))
+    partida.jogadores[1].receber(Carta("8", "Paus"))
+
+    assert partida.vencedor() == partida.jogadores[1]
