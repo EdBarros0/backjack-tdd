@@ -98,7 +98,10 @@ class Partida:
         if not self.iniciada:
             raise RuntimeError("A partida ainda não começou")
 
+        if jogador.pontuacao() > 21:
+            raise RuntimeError("O jogador já estourou")
+
         jogador.receber(self.baralho.comprar())
 
-    
+
         
