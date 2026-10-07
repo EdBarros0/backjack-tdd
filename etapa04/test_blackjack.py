@@ -286,3 +286,10 @@ def test_partida_nao_distribui_cartas_duas_vezes():
 
     assert len(partida.jogadores[0].cartas) == 2
     assert len(partida.jogadores[1].cartas) == 2
+
+def test_partida_fica_marcada_como_iniciada():
+    partida = Partida()
+
+    partida.iniciar()
+
+    assert partida.iniciada is True
