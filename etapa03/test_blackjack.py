@@ -155,3 +155,12 @@ def test_carta_comprada_nao_fica_no_baralho():
     carta = baralho.comprar()
 
     assert carta not in baralho.cartas
+
+def test_baralho_reduz_quantidade_apos_compras():
+    baralho = Baralho()
+
+    baralho.comprar()
+    baralho.comprar()
+    baralho.comprar()
+
+    assert len(baralho.cartas) == 49
