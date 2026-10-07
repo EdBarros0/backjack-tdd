@@ -277,3 +277,12 @@ def test_partida_sem_vencedor_quando_os_dois_estouram():
     partida.jogadores[1].receber(Carta("6", "Copas"))
 
     assert partida.vencedor() is None
+
+def test_partida_nao_distribui_cartas_duas_vezes():
+    partida = Partida()
+
+    partida.iniciar()
+    partida.iniciar()
+
+    assert len(partida.jogadores[0].cartas) == 2
+    assert len(partida.jogadores[1].cartas) == 2
