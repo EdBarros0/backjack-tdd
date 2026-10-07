@@ -293,3 +293,8 @@ def test_partida_fica_marcada_como_iniciada():
     partida.iniciar()
 
     assert partida.iniciada is True
+
+def test_nao_define_vencedor_antes_da_partida_comecar():
+    partida = Partida()
+
+    assert partida.vencedor() is None
