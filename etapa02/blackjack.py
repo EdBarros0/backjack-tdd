@@ -19,3 +19,6 @@ class Carta:
 class Jogador:
     def __init__(self):
         self.cartas = []
+
+    def receber(self, carta):
+        self.cartas.append(carta)
