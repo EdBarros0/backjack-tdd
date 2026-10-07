@@ -22,3 +22,6 @@ class Jogador:
 
     def receber(self, carta):
         self.cartas.append(carta)
+
+    def pontuacao(self):
+        return sum(carta.valor() for carta in self.cartas)
