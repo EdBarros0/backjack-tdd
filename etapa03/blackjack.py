@@ -49,3 +49,6 @@ class Baralho:
             for naipe in self.NAIPES
             for valor in self.VALORES
         ]
+
+    def comprar(self):
+        return self.cartas.pop()
