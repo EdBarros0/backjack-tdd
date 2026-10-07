@@ -6,8 +6,9 @@ class Carta:
         "A": 11,
     }
 
-    def __init__(self, valor):
+    def __init__(self, valor, naipe=None):
         self._valor = valor
+        self.naipe = naipe
 
     def valor(self):
         if self._valor in self.VALORES_ESPECIAIS:
@@ -44,7 +45,7 @@ class Baralho:
 
     def __init__(self):
         self.cartas = [
-            Carta(valor)
+            Carta(valor, naipe)
             for naipe in self.NAIPES
             for valor in self.VALORES
         ]
