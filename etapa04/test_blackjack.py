@@ -176,3 +176,9 @@ def test_partida_possui_dois_jogadores():
     partida = Partida()
 
     assert len(partida.jogadores) == 2
+
+def test_partida_possui_um_baralho():
+    partida = Partida()
+
+    assert isinstance(partida.baralho, Baralho)
+    assert len(partida.baralho.cartas) == 52
