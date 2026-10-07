@@ -6,7 +6,14 @@ def test_carta_numerica():
 
     assert carta.valor() == 7
 
+
 def test_rei_vale_dez():
     carta = Carta("K")
+
+    assert carta.valor() == 10
+
+
+def test_valete_vale_dez():
+    carta = Carta("J")
 
     assert carta.valor() == 10
