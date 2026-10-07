@@ -182,3 +182,11 @@ def test_partida_possui_um_baralho():
 
     assert isinstance(partida.baralho, Baralho)
     assert len(partida.baralho.cartas) == 52
+
+def test_partida_distribui_duas_cartas_para_cada_jogador():
+    partida = Partida()
+
+    partida.iniciar()
+
+    assert len(partida.jogadores[0].cartas) == 2
+    assert len(partida.jogadores[1].cartas) == 2
