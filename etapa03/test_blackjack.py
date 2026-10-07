@@ -107,3 +107,10 @@ def test_carta_possui_naipe():
     carta = Carta("A", "Copas")
 
     assert carta.naipe == "Copas"
+
+def test_baralho_possui_quatro_naipes():
+    baralho = Baralho()
+
+    naipes = {carta.naipe for carta in baralho.cartas}
+
+    assert naipes == {"Paus", "Copas", "Espadas", "Ouros"}
