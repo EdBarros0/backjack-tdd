@@ -129,3 +129,12 @@ def test_baralho_entrega_uma_carta():
 
     assert isinstance(carta, Carta)
     assert len(baralho.cartas) == 51
+
+def test_baralho_entrega_duas_cartas_diferentes():
+    baralho = Baralho()
+
+    carta1 = baralho.comprar()
+    carta2 = baralho.comprar()
+
+    assert carta1 != carta2
+    assert len(baralho.cartas) == 50
