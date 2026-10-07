@@ -56,3 +56,4 @@ class Baralho:
 class Partida:
     def __init__(self):
         self.jogadores = [Jogador(), Jogador()]
+        self.baralho = Baralho()
