@@ -39,5 +39,12 @@ class Jogador:
 
 
 class Baralho:
+    NAIPES = ["Paus", "Copas", "Espadas", "Ouros"]
+    VALORES = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"]
+
     def __init__(self):
-        self.cartas = [Carta(str(valor)) for valor in range(2, 54)]
+        self.cartas = [
+            Carta(valor)
+            for naipe in self.NAIPES
+            for valor in self.VALORES
+        ]
