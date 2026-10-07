@@ -320,3 +320,12 @@ def test_jogador_com_as_pode_fazer_21():
     partida.jogadores[1].receber(Carta("9", "Ouros"))
 
     assert partida.vencedor() == partida.jogadores[0]
+
+def test_partida_iniciada_permite_identificar_vencedor():
+    partida = Partida()
+
+    partida.iniciar()
+
+    vencedor = partida.vencedor()
+
+    assert vencedor in partida.jogadores or vencedor is None
