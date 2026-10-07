@@ -1,3 +1,4 @@
+import pytest
 from blackjack import Carta, Jogador, Baralho
 
 def test_carta_numerica():
@@ -138,3 +139,12 @@ def test_baralho_entrega_duas_cartas_diferentes():
 
     assert carta1 != carta2
     assert len(baralho.cartas) == 50
+
+def test_baralho_vazio_nao_entrega_carta():
+    baralho = Baralho()
+
+    for _ in range(52):
+        baralho.comprar()
+
+    with pytest.raises(IndexError):
+        baralho.comprar()
