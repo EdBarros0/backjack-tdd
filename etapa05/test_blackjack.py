@@ -358,3 +358,18 @@ def test_nao_permite_comprar_antes_da_partida_comecar():
 
     with pytest.raises(RuntimeError):
         partida.comprar_para(jogador)
+
+def test_jogador_nao_pode_comprar_apos_estourar():
+    partida = Partida()
+    partida.iniciar()
+
+    jogador = partida.jogadores[0]
+
+    jogador.cartas = [
+        Carta("10", "Paus"),
+        Carta("10", "Copas"),
+        Carta("5", "Espadas"),
+    ]
+
+    with pytest.raises(RuntimeError):
+        partida.comprar_para(jogador)
