@@ -219,3 +219,14 @@ def test_jogadores_possuem_pontuacao_apos_inicio():
 
     assert partida.jogadores[0].pontuacao() > 0
     assert partida.jogadores[1].pontuacao() > 0
+
+def test_partida_identifica_jogador_com_maior_pontuacao():
+    partida = Partida()
+
+    partida.jogadores[0].receber(Carta("10", "Paus"))
+    partida.jogadores[0].receber(Carta("8", "Copas"))
+
+    partida.jogadores[1].receber(Carta("10", "Espadas"))
+    partida.jogadores[1].receber(Carta("5", "Ouros"))
+
+    assert partida.vencedor() == partida.jogadores[0]
