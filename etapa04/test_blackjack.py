@@ -253,3 +253,14 @@ def test_jogador_acima_de_21_perde():
     partida.jogadores[1].receber(Carta("8", "Paus"))
 
     assert partida.vencedor() == partida.jogadores[1]
+
+def test_jogador_com_21_vence_jogador_com_menos():
+    partida = Partida()
+
+    partida.jogadores[0].receber(Carta("10", "Paus"))
+    partida.jogadores[0].receber(Carta("A", "Copas"))
+
+    partida.jogadores[1].receber(Carta("10", "Espadas"))
+    partida.jogadores[1].receber(Carta("9", "Ouros"))
+
+    assert partida.vencedor() == partida.jogadores[0]
