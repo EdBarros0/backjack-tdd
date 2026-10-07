@@ -62,4 +62,12 @@ def test_pontuacao_de_duas_cartas():
     jogador.receber(Carta("8"))
 
     assert jogador.pontuacao() == 15
-    
+
+
+def test_pontuacao_com_carta_de_figura():
+    jogador = Jogador()
+
+    jogador.receber(Carta("K"))
+    jogador.receber(Carta("7"))
+
+    assert jogador.pontuacao() == 17
