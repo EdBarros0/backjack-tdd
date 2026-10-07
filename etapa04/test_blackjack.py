@@ -197,3 +197,17 @@ def test_partida_reduz_baralho_apos_distribuicao():
     partida.iniciar()
 
     assert len(partida.baralho.cartas) == 48
+
+def test_jogadores_recebem_cartas_diferentes():
+    partida = Partida()
+
+    partida.iniciar()
+
+    cartas_jogador1 = partida.jogadores[0].cartas
+    cartas_jogador2 = partida.jogadores[1].cartas
+
+    todas_as_cartas = cartas_jogador1 + cartas_jogador2
+
+    identificacoes = [(carta._valor, carta.naipe) for carta in todas_as_cartas]
+
+    assert len(identificacoes) == len(set(identificacoes))
