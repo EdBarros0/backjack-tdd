@@ -102,3 +102,8 @@ def test_baralho_possui_52_cartas():
     baralho = Baralho()
 
     assert len(baralho.cartas) == 52
+
+def test_carta_possui_naipe():
+    carta = Carta("A", "Copas")
+
+    assert carta.naipe == "Copas"
