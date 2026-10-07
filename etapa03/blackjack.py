@@ -1,0 +1,43 @@
+class Carta:
+    VALORES_ESPECIAIS = {
+        "J": 10,
+        "Q": 10,
+        "K": 10,
+        "A": 11,
+    }
+
+    def __init__(self, valor):
+        self._valor = valor
+
+    def valor(self):
+        if self._valor in self.VALORES_ESPECIAIS:
+            return self.VALORES_ESPECIAIS[self._valor]
+
+        return int(self._valor)
+
+    def eh_as(self):
+        return self._valor == "A"
+
+
+class Jogador:
+    def __init__(self):
+        self.cartas = []
+
+    def receber(self, carta):
+        self.cartas.append(carta)
+
+    def pontuacao(self):
+        pontuacao = sum(carta.valor() for carta in self.cartas)
+
+        ases = sum(1 for carta in self.cartas if carta.eh_as())
+        
+        while pontuacao > 21 and ases > 0:
+            pontuacao -= 10
+            ases -= 1
+
+        return pontuacao    
+
+
+class Baralho:
+    def __init__(self):
+        self.cartas = [Carta(str(valor)) for valor in range(2, 54)]
