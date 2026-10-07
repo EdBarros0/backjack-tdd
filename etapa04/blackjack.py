@@ -70,3 +70,19 @@ class Partida:
             return jogador1
 
         return jogador2
+
+    def vencedor(self):
+        jogador1, jogador2 = self.jogadores
+
+        pontuacao1 = jogador1.pontuacao()
+        pontuacao2 = jogador2.pontuacao()
+
+        if pontuacao1 == pontuacao2:
+            return None
+
+        if pontuacao1 > pontuacao2:
+            return jogador1
+
+        return jogador2
+
+    
