@@ -71,3 +71,13 @@ def test_pontuacao_com_carta_de_figura():
     jogador.receber(Carta("7"))
 
     assert jogador.pontuacao() == 17
+
+def test_as_vale_um_quando_necessario():
+    jogador = Jogador()
+
+    jogador.receber(Carta("A"))
+    jogador.receber(Carta("8"))
+    jogador.receber(Carta("5"))
+
+    assert jogador.pontuacao() == 14
+
