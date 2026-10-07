@@ -62,3 +62,11 @@ class Partida:
         for jogador in self.jogadores:
             jogador.receber(self.baralho.comprar())
             jogador.receber(self.baralho.comprar())
+
+    def vencedor(self):
+        jogador1, jogador2 = self.jogadores
+
+        if jogador1.pontuacao() > jogador2.pontuacao():
+            return jogador1
+
+        return jogador2
