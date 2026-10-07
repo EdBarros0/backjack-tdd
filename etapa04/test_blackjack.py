@@ -264,3 +264,16 @@ def test_jogador_com_21_vence_jogador_com_menos():
     partida.jogadores[1].receber(Carta("9", "Ouros"))
 
     assert partida.vencedor() == partida.jogadores[0]
+
+def test_partida_sem_vencedor_quando_os_dois_estouram():
+    partida = Partida()
+
+    partida.jogadores[0].receber(Carta("10", "Paus"))
+    partida.jogadores[0].receber(Carta("10", "Copas"))
+    partida.jogadores[0].receber(Carta("5", "Espadas"))
+
+    partida.jogadores[1].receber(Carta("10", "Ouros"))
+    partida.jogadores[1].receber(Carta("10", "Paus"))
+    partida.jogadores[1].receber(Carta("6", "Copas"))
+
+    assert partida.vencedor() is None
