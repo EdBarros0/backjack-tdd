@@ -24,4 +24,12 @@ class Jogador:
         self.cartas.append(carta)
 
     def pontuacao(self):
-        return sum(carta.valor() for carta in self.cartas)
+        pontuacao = sum(carta.valor() for carta in self.cartas)
+
+        ases = sum(1 for carta in self.cartas if carta._valor == "A")
+
+        while pontuacao > 21 and ases > 0:
+            pontuacao -= 10
+            ases -= 1
+
+        return pontuacao    
