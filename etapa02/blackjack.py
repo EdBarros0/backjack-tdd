@@ -14,3 +14,8 @@ class Carta:
             return self.VALORES_ESPECIAIS[self._valor]
 
         return int(self._valor)
+
+
+class Jogador:
+    def __init__(self):
+        self.cartas = []
