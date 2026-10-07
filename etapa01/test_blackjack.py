@@ -23,3 +23,9 @@ def test_dama_vale_dez():
     carta = Carta("Q")
 
     assert carta.valor() == 10
+
+
+def test_as_vale_onze():
+    carta = Carta("A")
+
+    assert carta.valor() == 11
