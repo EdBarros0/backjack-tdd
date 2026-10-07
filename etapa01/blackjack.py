@@ -1,6 +1,6 @@
 class Carta:
     def __init__(self, valor):
-        self.valor_carta = valor
+        self._valor = valor
 
     def valor(self):
-        return int(self.valor_carta)
+        return int(self._valor)
