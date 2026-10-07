@@ -57,11 +57,17 @@ class Partida:
     def __init__(self):
         self.jogadores = [Jogador(), Jogador()]
         self.baralho = Baralho()
+        self.iniciada = False
 
     def iniciar(self):
+        if self.iniciada:
+            return
+
         for jogador in self.jogadores:
             jogador.receber(self.baralho.comprar())
             jogador.receber(self.baralho.comprar())
+
+        self.iniciada = True
 
     def vencedor(self):
         jogador1, jogador2 = self.jogadores
