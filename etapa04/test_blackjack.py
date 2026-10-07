@@ -190,3 +190,10 @@ def test_partida_distribui_duas_cartas_para_cada_jogador():
 
     assert len(partida.jogadores[0].cartas) == 2
     assert len(partida.jogadores[1].cartas) == 2
+
+def test_partida_reduz_baralho_apos_distribuicao():
+    partida = Partida()
+
+    partida.iniciar()
+
+    assert len(partida.baralho.cartas) == 48
