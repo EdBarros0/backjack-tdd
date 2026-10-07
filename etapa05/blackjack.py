@@ -95,5 +95,10 @@ class Partida:
         return jogador1 if pontuacao1 > pontuacao2 else jogador2
 
     def comprar_para(self, jogador):
+        if not self.iniciada:
+            raise RuntimeError("A partida ainda não começou")
+
         jogador.receber(self.baralho.comprar())
+
+    
         
