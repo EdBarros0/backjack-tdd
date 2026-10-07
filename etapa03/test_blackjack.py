@@ -148,3 +148,10 @@ def test_baralho_vazio_nao_entrega_carta():
 
     with pytest.raises(IndexError):
         baralho.comprar()
+
+def test_carta_comprada_nao_fica_no_baralho():
+    baralho = Baralho()
+
+    carta = baralho.comprar()
+
+    assert carta not in baralho.cartas
