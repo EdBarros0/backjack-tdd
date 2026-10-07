@@ -57,3 +57,8 @@ class Partida:
     def __init__(self):
         self.jogadores = [Jogador(), Jogador()]
         self.baralho = Baralho()
+
+    def iniciar(self):
+        for jogador in self.jogadores:
+            jogador.receber(self.baralho.comprar())
+            jogador.receber(self.baralho.comprar())
