@@ -81,3 +81,11 @@ def test_as_vale_um_quando_necessario():
 
     assert jogador.pontuacao() == 14
 
+def test_dois_ases_valem_um_quando_necessario():
+    jogador = Jogador()
+
+    jogador.receber(Carta("A"))
+    jogador.receber(Carta("A"))
+    jogador.receber(Carta("9"))
+
+    assert jogador.pontuacao() == 21
