@@ -298,3 +298,14 @@ def test_nao_define_vencedor_antes_da_partida_comecar():
     partida = Partida()
 
     assert partida.vencedor() is None
+
+def test_segundo_jogador_pode_ser_vencedor():
+    partida = Partida()
+
+    partida.jogadores[0].receber(Carta("10", "Paus"))
+    partida.jogadores[0].receber(Carta("5", "Copas"))
+
+    partida.jogadores[1].receber(Carta("10", "Espadas"))
+    partida.jogadores[1].receber(Carta("8", "Ouros"))
+
+    assert partida.vencedor() == partida.jogadores[1]
