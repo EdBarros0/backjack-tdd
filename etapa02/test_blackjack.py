@@ -40,3 +40,11 @@ def test_jogador_comeca_sem_cartas():
     jogador = Jogador()
 
     assert jogador.cartas == []
+
+def test_jogador_recebe_carta():
+    jogador = Jogador()
+    carta = Carta("7")
+
+    jogador.receber(carta)
+
+    assert jogador.cartas == [carta]
