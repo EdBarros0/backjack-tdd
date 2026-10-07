@@ -121,3 +121,11 @@ def test_baralho_nao_possui_cartas_duplicadas():
     cartas = [(carta._valor, carta.naipe) for carta in baralho.cartas]
 
     assert len(cartas) == len(set(cartas))
+
+def test_baralho_entrega_uma_carta():
+    baralho = Baralho()
+
+    carta = baralho.comprar()
+
+    assert isinstance(carta, Carta)
+    assert len(baralho.cartas) == 51
