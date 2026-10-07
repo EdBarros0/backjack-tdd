@@ -211,3 +211,11 @@ def test_jogadores_recebem_cartas_diferentes():
     identificacoes = [(carta._valor, carta.naipe) for carta in todas_as_cartas]
 
     assert len(identificacoes) == len(set(identificacoes))
+
+def test_jogadores_possuem_pontuacao_apos_inicio():
+    partida = Partida()
+
+    partida.iniciar()
+
+    assert partida.jogadores[0].pontuacao() > 0
+    assert partida.jogadores[1].pontuacao() > 0
