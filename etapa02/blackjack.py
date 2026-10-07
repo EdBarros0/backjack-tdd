@@ -15,6 +15,9 @@ class Carta:
 
         return int(self._valor)
 
+    def eh_as(self):
+        return self._valor == "A"
+
 
 class Jogador:
     def __init__(self):
@@ -26,8 +29,8 @@ class Jogador:
     def pontuacao(self):
         pontuacao = sum(carta.valor() for carta in self.cartas)
 
-        ases = sum(1 for carta in self.cartas if carta._valor == "A")
-
+        ases = sum(1 for carta in self.cartas if carta.eh_as())
+        
         while pontuacao > 21 and ases > 0:
             pontuacao -= 10
             ases -= 1
