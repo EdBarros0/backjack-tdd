@@ -29,3 +29,9 @@ def test_as_vale_onze():
     carta = Carta("A")
 
     assert carta.valor() == 11
+
+
+def test_carta_numerica_diferente():
+    carta = Carta("2")
+
+    assert carta.valor() == 2
