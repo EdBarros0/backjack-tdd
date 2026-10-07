@@ -48,3 +48,9 @@ def test_jogador_recebe_carta():
     jogador.receber(carta)
 
     assert jogador.cartas == [carta]
+
+def test_pontuacao_de_uma_carta():
+    jogador = Jogador()
+    jogador.receber(Carta("7"))
+
+    assert jogador.pontuacao() == 7
