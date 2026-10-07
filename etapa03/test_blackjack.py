@@ -164,3 +164,10 @@ def test_baralho_reduz_quantidade_apos_compras():
     baralho.comprar()
 
     assert len(baralho.cartas) == 49
+
+def test_baralho_possui_todas_as_combinacoes():
+    baralho = Baralho()
+
+    cartas = {(carta._valor, carta.naipe) for carta in baralho.cartas}
+
+    assert len(cartas) == 52
