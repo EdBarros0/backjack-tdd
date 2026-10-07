@@ -83,11 +83,8 @@ class Partida:
         pontuacao1 = jogador1.pontuacao()
         pontuacao2 = jogador2.pontuacao()
 
-        if pontuacao1 > 21 and pontuacao2 > 21:
-            return None
-
         if pontuacao1 > 21:
-            return jogador2
+            return None if pontuacao2 > 21 else jogador2
 
         if pontuacao2 > 21:
             return jogador1
@@ -95,8 +92,5 @@ class Partida:
         if pontuacao1 == pontuacao2:
             return None
 
-        if pontuacao1 > pontuacao2:
-            return jogador1
-
-        return jogador2
-    
+        return jogador1 if pontuacao1 > pontuacao2 else jogador2
+        
